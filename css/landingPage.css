@@ -5,6 +5,7 @@
     margin: 0;
     padding: 0;
     font-family: "Josefin Sans", sans-serif;
+    scroll-behavior: smooth;
 }
 
 :root{
@@ -15,6 +16,7 @@
     --whtie: #F6F5F2;
     --smoke: #FAEED1;
     --boxshadow: 2px 3px 10px 2px var(--lightgreen);
+    --boxshadow-white: 0 0px 20px var(--whtie);
     --bebas: "Bebas Neue", sans-serif;
 }
 body{
@@ -23,6 +25,7 @@ body{
     align-items: center;
     flex-direction: column;
     background-color: var(--black);
+    position: relative;
 }
 nav{
     display: flex;
@@ -239,7 +242,45 @@ nav a:hover{
 
 
 
-  /*  */
+  /* BODY */
+
+
+.pop{
+  visibility: hidden;
+  position: sticky;
+  top: 90%;
+  background-color: var(--lightgreen);
+  width: 4rem;
+  height: 4rem;
+  margin-right: 2rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  rotate: -90deg;
+  font-size: 3.5rem;
+  opacity: .1;
+  box-shadow: var(--boxshadow-white);
+  cursor: pointer;
+}
+
+.pop a{
+  text-decoration: none;
+  color: var(--whtie);
+}
+.pop:hover{
+  opacity: 1;
+}
+.pop.active{
+  animation: focus;
+  animation-duration: 2s;
+  visibility: visible;
+}
+@keyframes focus{
+  from {opacity: .2;}
+  to {opacity: 1;}
+}
+
 #about, #portfolio, #contact{
     background-color: var(--black);
     border-bottom: 1px solid var(--grayblue);
@@ -260,5 +301,10 @@ nav a:hover{
     /* BURGER */
     .burger{
         display: block;
+    }
+    .pop{
+      width: 38px;
+      height: 38px;
+      font-size: 1.5rem;
     }
 }

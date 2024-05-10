@@ -30,6 +30,8 @@ window.addEventListener("scroll", () =>{
 
     document.querySelector("nav").classList.toggle("scroll",window.scrollY > 300);
     document.querySelector(".logo").classList.toggle("logoScroll",window.scrollY > 300);
+    document.querySelector(".pop").classList.toggle("active",window.scrollY > 600);
+
 
 });
 
