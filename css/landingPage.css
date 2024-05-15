@@ -13,6 +13,7 @@
     --black: #0F0F0F;
     --darkgreen: #005B41;
     --lightgreen: #008170;
+    --darksmoke: #9DB2BF;
     --whtie: #F6F5F2;
     --smoke: #FAEED1;
     --boxshadow: 2px 3px 10px 2px var(--lightgreen);
@@ -27,6 +28,7 @@ body{
     background-color: var(--black);
     position: relative;
 }
+
 nav{
     display: flex;
     justify-content: space-between;
@@ -42,21 +44,32 @@ nav{
 .scroll{
     position: sticky;
     top: .3rem;
-    animation: pop;
-    animation-duration: .7s;
-    background-color: var(--darkgreen);
+    animation: pop .7s;
+    background-color: var(--darkgreen) !important;
     width: 85vw;
     transition: width .5s;
+}
+.scroll > .burger > span{
+  background-color: #F6F5F2;
+  animation: mobileSpan .7s;
+}
+@keyframes mobileSpan {
+  from {background-color: var(--darkgreen);}
+  to {background-color: var(--whtie);}
+  
 }
 @keyframes pop {
     from {top: .3rem;}
     to {top: 2rem;}
-    from {background-color: var(--black);}
-    to {background-color: var(--darkgreen);}
 }
+/* @keyframes navBackground {
+  from {top: .3rem;}
+  to {top: 2rem;}
+  to {background-color: var(--whtie);}
+} */
 .logoScroll{
   border: 2px solid var(--black) !important;
-  
+
 }
 
 .logoScroll h1:first-child{
@@ -121,8 +134,23 @@ nav a:hover{
     border-radius: .3rem;
     color: var(--black);
 }
-
-
+/* HEADER LIGHT MODE */
+.nav-lightMode{
+  background-color: var(--whtie) !important;
+  border-bottom: none;
+}
+.li-lightMode{
+  color: var(--darkgreen);
+}
+.li-lightMode:hover{
+  color: #005b41cb;
+}
+.nav-a-li-lightMode:hover{
+  background-color: #e2e2e2;
+}
+.burgerSpanLight{
+  background-color: var(--black);
+}
 /* BURGER MENU  */
 .burger {
     position: absolute;
@@ -135,11 +163,11 @@ nav a:hover{
     margin-right: 2rem;
     right: 0;
   }
-  
+
 .burger input {
     display: none;
 }
-  
+
   .burger span {
     display: block;
     position: absolute;
@@ -151,28 +179,28 @@ nav a:hover{
     left: 0;
     transform: rotate(0deg);
     transition: .25s ease-in-out;
-    background-color: var(--whtie);
+    background-color: var(--darkgreen);
   }
-  
+
   .burger span:nth-of-type(1) {
     top: 0px;
     transform-origin: left center;
   }
-  
-  
-  
+
+
+
   .burger span:nth-of-type(2) {
     top: 50%;
     transform: translateY(-50%);
     transform-origin: left center;
   }
-  
+
   .burger span:nth-of-type(3) {
     top: 100%;
     transform-origin: left center;
     transform: translateY(-100%);
   }
-  
+
   .burger input:checked ~ span:nth-of-type(1) {
     transform: rotate(46deg);
     top: 0px;
@@ -181,12 +209,12 @@ nav a:hover{
     position: absolute;
     z-index: 30;
   }
-  
+
   .burger input:checked ~ span:nth-of-type(2) {
     width: 0%;
     opacity: 0;
   }
-  
+
   .burger input:checked ~ span:nth-of-type(3) {
     transform: rotate(-46deg);
     top: 22px;
@@ -223,7 +251,7 @@ nav a:hover{
     flex-direction: column;
     position: relative;
     bottom: 100px;
-    
+
   }
   .mobile a{
     width: 100%;
@@ -239,7 +267,6 @@ nav a:hover{
   .mobile.active{
     right: 0;
   }
-
 
 
   /* BODY */
@@ -272,32 +299,128 @@ nav a:hover{
   opacity: 1;
 }
 .pop.active{
-  animation: focus;
-  animation-duration: 2s;
+  animation: focus 2.5s infinite;
   visibility: visible;
 }
 @keyframes focus{
-  from {opacity: .2;}
-  to {opacity: 1;}
+  from {opacity: 0;}
+  to {opacity: .4;}
 }
 
 #about, #portfolio, #contact{
-    background-color: var(--black);
+    background-color: transparent;
     border-bottom: 1px solid var(--grayblue);
-    width: 100%;
+    width: 83%;
     height: 100vh;
-    
+    border-radius: .3rem;
+
     display: flex;
     justify-content: center;
     align-items: center;
     color: var(--whtie);
     font-size: 3rem;
 }
+
+
+
+
+/* LIGHT MODE */
+.container{
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: 1rem;
+}
+
+.toggle {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 0 50px 20px rgba(0, 0, 0, .1);
+  line-height: 1;
+}
+
+.input {
+  display: none;
+}
+
+.icon {
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+  transition: transform 500ms;
+}
+
+.icon--moon {
+  transform: scale(0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #BED754;
+}
+
+.icon--sun {
+  transition-delay: 200ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: #FDDE55;
+}
+
+#switch:checked + .icon--moon {
+  transition-delay: 200ms;
+  transform: scale(1) rotate(360deg);
+}
+
+#switch:checked ~ .icon--sun {
+  transform: rotate(360deg) scale(0);
+
+}
+svg{
+  height: 20px;
+}
+
+
+
+/* LIGHT MODE */
+body.light{
+  background-color: #DDE6ED;
+  animation: lightMode;
+  animation-duration: 1.5s;
+}
+@keyframes lightMode {
+  from {background-color: var(--black);}
+  to {background-color: #F7F7F7;}
+}
+/* LIGHT NAV */
+nav{
+  animation-duration: 2s;
+}
+@keyframes light-nav {
+  to {}
+}
+
+/* LIGHT LIST BUTTON */
+li{
+  animation-duration: 2s;
+}
+@keyframes listOn {
+  to {color: var(--lightgreen)}
+}
+@keyframes listOff {
+  to {color: var(--darksmoke)}
+}
+
 @media (max-width: 700px){
     nav > ul{
         display: none;
     }
-
+    #about, #portfolio, #contact{
+      width: 100%;
+    }
     /* BURGER */
     .burger{
         display: block;
@@ -306,5 +429,21 @@ nav a:hover{
       width: 38px;
       height: 38px;
       font-size: 1.5rem;
+    }
+    .container{
+      top: 120px;
+      margin: 1rem .1rem;
+    }
+    .mobile-container-toggle-button{
+      animation: moving;
+      animation-duration: .8s;
+    }
+    @keyframes moving {
+      from {opacity: 1;}
+      to {opacity: .1;}
+      from {top: 180px;}
+      to  {top: 180px;}
+      from {right: -50px;}
+      to  {right: 0;}
     }
 }
