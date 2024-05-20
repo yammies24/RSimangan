@@ -414,23 +414,28 @@ li{
   to {color: var(--darksmoke)}
 }
 
-#about, #portfolio, #contact{
+#about, #portfolio{
   width: 100%;
 }
 
 /* CONTACT SECTION */
+#contact{
+  width: 100%;
+  height: auto;
+  padding: 1rem 0;
+}
 .classContact{
-  background-color: var(--grayblue);
-  width: 90%;
-  height: 100vh;
+  width: 89%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  gap: 1rem;
+  padding: 3rem 2rem;
 }
 .socialMedia{
   background-color: var(--darkgreen);
-  width: 15rem;
-  height: 25rem;
+  width: 10rem;
+  height: 18rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -439,12 +444,39 @@ li{
 }
 .socialLogo{
   height: 25px;
-  fill: #232D3F;
+  filter: brightness(0) saturate(100%) invert(5%) sepia(10%) saturate(2539%) hue-rotate(157deg) brightness(98%) contrast(101%);
+  box-shadow: var(--boxshadow-white);
+}
+.socialLogo:hover{
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(321%) hue-rotate(169deg) brightness(108%) contrast(80%);
 }
 .formContact{
   background-color: var(--darkgreen);
-  width: 10rem;
-  height: 12rem;
+  width: 40rem;
+  height: 28rem;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem 1.5rem;
+}
+.formContact p{
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+}
+.formContact input{
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding: .3rem .2rem;
+  width: 100%;
+  border-radius: 5px;
+}
+.formContact  textarea{
+  font-size: 1.5rem;
+  padding: .3rem .2rem;
+  border-radius: 5px;
+  width: 100%;
 }
 footer{
   background-color: var(--darkgreen);
@@ -475,16 +507,23 @@ footer{
     }
     /* mobile contact */
     .classContact{
-      width: auto;
+      width: 100%;
       display: flex;
       flex-direction: column-reverse;
+      justify-content: center;
     }
     .socialMedia{
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      gap: 10px;
+      height: auto;
+      padding: 1.5rem 2rem;
+      gap: 20px;
+    }
+    .formContact{
+      margin: 0;
+      width: 60vw;
     }
     .container{
       top: 120px;
