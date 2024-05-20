@@ -29,7 +29,6 @@ function click(burger){
     activeMobile.classList.toggle("active");
     if(document.querySelector(".light")){
         activeMobile.style.backgroundColor = "var(--whtie)";
-        activeMobile.style.borderLeft = "1px solid var(--darkgreen)";
     }
     
 };
