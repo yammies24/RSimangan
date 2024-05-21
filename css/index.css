@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+:root{
+  --grayblue: #232D3F;
+  --black: #0F0F0F;
+  --darkgreen: #005B41;
+  --lightgreen: #008170;
+  --whtie: #F6F5F2;
+  --smoke: #FAEED1;
+  --gap-3: 3rem;
+  --gap-1: 1rem;
+  --boxshadow: 2px 3px 10px 2px var(--lightgreen);
+  --josefin: "Josefin Sans", sans-serif;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: var(--josefin);
+}
+
+#background{
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#nav{
+  background-color: var(--black);
+  width: 80rem;
+  position: relative;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grayblue);
+  height: 7rem;
+  margin: 0 2rem;
+  padding: 1rem 2rem;
+}
+#logo, #nav-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 50px;
+}
+#logo{
+  padding: 3px 10px;
+  color: var(--whtie);
+  background-color: var(--darkgreen);
+  height: 3.5rem;
+  width: 7rem 7rem 7rem 8rem;
+  border-radius: .5rem;
+  gap: var(--gap-1);
+}
+#logo:hover{
+  box-shadow: var(--boxshadow);
+}
+h1:first-child{
+  color: var(--black);
+}
+h1:last-child{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black);
+  padding: .9rem .7rem;
+  border-radius: 5px;
+}
+#nav-header{
+  gap: var(--gap-3);
+  list-style: none;
+  flex-wrap: wrap;
+}
+#nav-header li{
+  color: var(--whtie);
+  cursor: pointer;
+}
+#nav-header li:hover{
+  color: var(--lightgreen);
+}
+
+
+
+
+@media (min-width: 601px) and (max-width: 1300px) {
+  
+}
+@media (min-width: 150px) and (max-width: 600px) {
+  .container{
+    margin: 0 1rem;
+    padding: 0;
+    align-items: center;
+    border-bottom: none;
+  }
+ #nav-header{
+    display: none;
+  }
+  #logo{
+    top: 0;
+  }
+  
+  /* BURGER MENU */
+  .burger{
+    display: block !important;
+    fill: var(--black);
+    position: absolute;
+    z-index: 20;
+  }
+
+}
+
+
+/* BURGER MENU  */
+.burger {
+  position: relative;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+.burger input {
+  display: none;
+}
+
+.burger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: black;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+  background-color: var(--whtie);
+}
+
+.burger span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+
+
+.burger span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger input:checked ~ span:nth-of-type(1) {
+  transform: rotate(46deg);
+  top: 0px;
+  left: 5px;
+  background-color: var(--black);
+  position: absolute;
+  z-index: 30;
+}
+
+.burger input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+.burger input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-46deg);
+  top: 22px;
+  left: 5px;
+  background-color: var(--black);
+}
+
+
+/* MOBILE NAVIGATOR */
+.mobile{
+  background-color: var(--darkgreen);
+  height: 100vh;
+  width: 100%;
+  max-width: 600px;
+  position: fixed;
+  top: 0;
+  right: -600px;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  color: var(--whtie);
+  transition: .8s ease;
+}
+.mobile ul{
+  list-style: none;
+  width: 100%;
+  text-align: center;
+}
+.mobile li {
+  position: relative;
+  bottom: 150px;
+  margin-bottom: 3rem;
+  padding: 10px 1rem;
+  cursor: pointer;
+}
+.mobile li:hover {
+  color: var(--black);
+}
+.mobile.active{
+  right: 0;
+}
+
+
+
+
+
+
+/* MAIN BODY */
+.layer{
+  background-color: var(--grayblue);
+  width: 100px;
+  height: 50%;
+}
+

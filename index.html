@@ -4,112 +4,45 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/landingPage.css">
+    <link rel="stylesheet" href="./css/index.css">
     <title>Document</title>
 </head>
-<body>
-    <div id="scrollup"></div>
-    <!-- TOGGLE FOR DARK AND LIGHT MODE -->
-    <div class="container">
-        <label class="toggle" for="switch">
-            <input id="switch" class="input" type="checkbox">
-            <div class="icon icon--moon">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path clip-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" fill-rule="evenodd"></path>
-                </svg>
+<body id="background">
+    <!-- NAVIGATOR BAR / HEADER -->
+    <nav id="nav">
+        <div class="container">
+            <!-- logo -->
+            <div id="logo">
+                <h1 >Rey</h1>
+                <h1 >Sim</h1>
             </div>
-        
-            <div class="icon icon--sun">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"></path>
-                </svg>
+            
+            <label class="burger" for="burger">
+              <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <div class="mobile">
+              <ul>
+                <li>About</li>
+                <li>Portfolio</li>
+                <li>Contact</li>
+              </ul>
             </div>
-        </label>
-    </div>
 
-
-    <!-- HEADER -->
-    <nav>
-        <!-- LOGO -->
-        <div class="logo">
-            <h1>Rey</h1>
-            <h1>Sim</h1>
-        </div>
-
-        <!-- MENU -->
-
-        <!-- BURGER -->
-        <label class="burger" for="burger">
-            <input type="checkbox" id="burger">
-              <span></span>
-              <span></span>
-              <span></span>
-          </label>
-
-        <!-- MOBILE -->
-        <div class="mobile">
-            <ul>
-                <a href="#about"><li class="mobile-list">About</li></a>
-                <a href="#portfolio"><li class="mobile-list">Portfolio</li></a>
-                <a href="#contact"><li class="mobile-list">Contact</li></a>
+            <!-- list -->
+            <ul id="nav-header">
+                <li class="li-button">About</li>
+                <li class="li-button">Portfolio</li>
+                <li class="li-button">Contact</li>
             </ul>
-          </div>
-
-        <!-- PC -->
-        <ul>
-            <a href="#about"><li class="pc-list">About</li></a>
-            <a href="#portfolio"><li class="pc-list">Portfolio</li></a>
-            <a href="#contact"><li class="pc-list">Contact</li></a>
-        </ul>
+        </div>
     </nav>
-    
-    <!-- BODY -->
-    <!-- POP UP BUTTON FOR SCROLL UP TO HEADER -->
-        <div class="pop">
-            <a href="#scrollup">></a>
-        </div>
 
-    <section id="about">
-        <div class="classAbout">
-            ABOUT
-        </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section id="portfolio">
-        <div class="classPortfolio">
-            PORTFOLIO
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="classContact">
-            <div class="socialMedia">
-                <a href="https://www.facebook.com/11.1.19ILoveYouMyRizz" target="_blank"><img class="socialLogo" src="./img/facebook.png" alt="FACEBOOK"></a>
-                <a href="https://www.instagram.com/butssimangan" target="_blank"><img class="socialLogo" src="./img/instagram.png" alt="INSTAGRAM"></a>
-                <a href="https://github.com/yammies24" target="_blank"><img class="socialLogo" src="./img/github.png" alt="GITHUB"></a>
-                <a href="https://www.tiktok.com/@juniorsimangan" target="_blank"><img class="socialLogo" src="./img/tik-tok.png" alt="TIKTOK"></a>
-            </div>
-            <div class="formContact">
-                <p>Your name</p>
-                <input type="text">
-                <p>Your email</p>
-                <input type="text">
-                <textarea name="" id="" cols="30" rows="10"></textarea>
-                <p class="letter">150/150</p>
-                <button>Send</button>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-Created by@Reynaldo Simangan Jr.
-    </footer>
-
-    <!-- SCRIPT -->
-    <script src="./js/landingPage.js"></script>
+    <!-- MAIN -->
+    <!-- JAVASCRIPT -->
+    <script src="./js/index.js"></script>
 </body>
 </html>
