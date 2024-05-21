@@ -18,6 +18,7 @@
     --smoke: #FAEED1;
     --boxshadow: 2px 3px 10px 2px var(--lightgreen);
     --boxshadow-white: 0 0px 20px var(--whtie);
+    --boxshadow-grayblue: 0 0px 20px var(--grayblue);
     --bebas: "Bebas Neue", sans-serif;
 }
 body{
@@ -429,7 +430,7 @@ li{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 1.8rem;
   padding: 3rem 2rem;
 }
 .socialMedia{
@@ -441,6 +442,7 @@ li{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: var(--boxshadow-grayblue);
 }
 .socialLogo{
   height: 25px;
@@ -448,7 +450,7 @@ li{
   box-shadow: var(--boxshadow-white);
 }
 .socialLogo:hover{
-  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(321%) hue-rotate(169deg) brightness(108%) contrast(80%);
+  filter: brightness(0) saturate(100%)
 }
 .formContact{
   background-color: var(--darkgreen);
@@ -460,23 +462,50 @@ li{
   justify-content: center;
   align-items: flex-start;
   padding: 1rem 1.5rem;
+  position: relative;
+  z-index: -1;
+  box-shadow: var(--boxshadow-grayblue);
 }
 .formContact p{
-  font-size: 1.3rem;
+  font-size: 1rem;
   margin-bottom: .5rem;
 }
+.formContact .letter{
+  font-size: 12px;
+  color: var(--darksmoke);
+}
 .formContact input{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
-  padding: .3rem .2rem;
-  width: 100%;
+  padding: .3rem .5rem;
+  width: 99%;
   border-radius: 5px;
+  border: none;
 }
 .formContact  textarea{
-  font-size: 1.5rem;
-  padding: .3rem .2rem;
+  font-size: 1.2rem;
+  padding: .3rem .5rem;
   border-radius: 5px;
   width: 100%;
+  height: 150px;
+  margin-bottom: 1rem;
+  width: 98%;
+}
+.formContact button{
+  padding: .5rem 1rem;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 0 18px 35px 0;
+}
+.formContact button:hover{
+  background-color: var(--darksmoke);
 }
 footer{
   background-color: var(--darkgreen);
