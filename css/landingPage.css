@@ -41,6 +41,8 @@ nav{
     background-color: inherit;
     border-bottom-left-radius: .5rem;
     border-bottom-right-radius: .5rem;
+    position: relative;
+    z-index: 2;
 }
 .scroll{
     position: sticky;
